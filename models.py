@@ -77,7 +77,11 @@ class PoissonModel(AbsNonparametricModel):
         super().__init__()
 
     def marginal_likelihood(self, obs):
+        assert int(obs) == obs, "Observation must be an integer"
         return st.poisson.pmf(obs, self.param)
+
+    def __str__(self):
+        return f"PoissonModel({self.param:.2f})"
 
 
 class BayesianPoissonModel(AbsContinuousBayesianModel):
@@ -91,6 +95,7 @@ class BayesianPoissonModel(AbsContinuousBayesianModel):
         return gamma.pdf(self.param_space, a=self.prior_shape, loc=self.prior_loc, scale=self.prior_scale)
 
     def likelihood(self, obs):
+        assert int(obs) == obs, "Observation must be an integer"
         return st.poisson.pmf(obs, self.param_space)
 
 
