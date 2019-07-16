@@ -10,7 +10,7 @@ def parse_second_column(data_str):
     return [float(line.split(", ")[1]) for line in data_str.split("\n")]
 
 
-def poisson_plot(ys, ys2, p=0.025, kw2={}, extra_code=""):
+def plot_poissons_error(ys, ys2, p=0.025, kw2={}, extra_code=""):
     yerr = np.vstack([[y - st.poisson.ppf(p, y) for y in ys.values()],
                       [st.poisson.ppf(1 - p, y) - y for y in ys.values()]])
     fig, ax = plt.subplots(1, 1)
