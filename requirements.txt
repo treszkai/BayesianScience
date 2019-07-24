@@ -3,3 +3,5 @@ matplotlib>=3.0.0
 numpy>=1.16.0
 scipy>=1.2.0
 tqdm>=4.0.0
+pystan>=2.19.0.0
+pytest>=5.0.0

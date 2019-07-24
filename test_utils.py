@@ -16,3 +16,11 @@ def test_central_credible_interval_cont():
     print(f"True:       [{true_lb:.5f}, {true_ub:.5f}]")
     assert np.allclose(true_lb, lb, atol=1e-5, rtol=0), "Lower bound diff: {:.2e}".format(lb - true_lb)
     assert np.allclose(true_ub, ub, atol=1e-5, rtol=0), "Upper bound diff: {:.2e}".format(ub - true_ub)
+
+
+def test_calc_irr():
+    assert utils.calc_irr(150, 100) == 0.5
+
+
+def test_calc_inv_irr():
+    assert utils.calc_inv_irr(0.5, 100) == 150
