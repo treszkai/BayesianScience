@@ -1,0 +1,5 @@
+The effects of daylight savings time adjustment on the incidence rate of acute myocardial infarction: a Bayesian meta-analysis by Laszlo Treszkai is licensed under a Creative Commons Attribution 4.0 International License (CC-BY-4.0). (See LICENSE-CC-BY-4.0.txt for license details.)
+
+The data presented in the Relevant studies section belong to the original authors and they do not fall under the above CC-BY-4.0 license.
+
+The software used for this analysis is distributed under the MIT license. (See LICENSE-MIT.txt for license details.)
