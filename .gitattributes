@@ -1,0 +1,2 @@
+**/stan/*.model filter=lfs diff=lfs merge=lfs -text
+**/figs/* filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,19 @@
+
+\def\x{10mm}
+\def\y{8mm}
+
+\node[obs,label={[name=y-label]right:$\sim \text{Poisson}(x_d)$}] (y) at (0,0) {$y_d$};
+\node[latent,above=\y of y,label={right:$= r_d \cdot t_d$}] (y-mean) {$x_d$};
+\node[above=\y of y-mean,xshift=\x] (trend-mean) {$t_d$};
+\node[latent,above=\y of y-mean,xshift=-\x] (irr) {$r_d$};
+\node[latent,above=\y of irr,label={right:{\begin{tabular}{l}Relative risk increase\\on Monday\end{tabular}}}] (irr-Mo) {$\theta$};
+
+\draw[->] (irr-Mo) -- (irr) node[pos=0.8] (foo) {};
+\draw[->] (irr) -- (y-mean);
+\draw[->] (trend-mean) -- (y-mean);
+\draw[->] (y-mean) -- (y);
+
+\plate {days} {(irr) (trend-mean) (y-mean) (y) (y-label) (foo)} {$d = \text{Mo} .. \text{Fr}$}
+
+% make bounding box bigger
+\path (current bounding box.north west) ++(-1mm,1mm) -- (current bounding box.south east) ++(1mm,-1mm);

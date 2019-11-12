@@ -1,0 +1,12 @@
+
+\def\x{10mm}
+\def\y{8mm}
+
+\node[obs,label={left:\begin{tabular}{r}Observed\\ posttransitional\\ counts\end{tabular}},label={right:$\sim \text{Poisson}(x_{\text{Mo}})$}] (y) at (0,0) {$y_{\text{Mo}}$};
+\node[latent,above=\y of y,label={left:\begin{tabular}{r}Mean\\ posttransitional\\ counts\end{tabular}},label={right:$= r_{\text{Mo}} \cdot t_{\text{Mo}}$}] (y-mean) {$x_{\text{Mo}}$};
+\node[above=\y of y-mean,xshift=\x,label={right:\begin{tabular}{l}Mean\\ trend\\ counts\end{tabular}}] (trend-mean) {$t_{\text{Mo}}$};
+\node[latent,above=\y of y-mean,xshift=-\x,label={left:\begin{tabular}{r}Monday's\\ risk ratio\end{tabular}}] (irr) {$r_{\text{Mo}}$};
+
+\draw[->] (irr) -- (y-mean);
+\draw[->] (trend-mean) -- (y-mean);
+\draw[->] (y-mean) -- (y);
